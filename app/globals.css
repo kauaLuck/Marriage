@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fcfaf7;
+  --foreground: #2b211b;
+  --muted: #f4eee9;
+  --border: rgba(127, 85, 57, 0.12);
+  --font-playfair: "Georgia", "Times New Roman", serif;
+  --font-poppins: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(237, 224, 212, 0.65), transparent 30%),
+    linear-gradient(180deg, #fcfaf7 0%, #f7f2ed 100%);
+  color: var(--foreground);
+}
+
+* {
+  border-color: var(--border);
+}
+
+.glass-panel {
+  @apply border border-white/40 bg-white/60 backdrop-blur-2xl;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-spacing {
+  @apply py-16 sm:py-20 lg:py-28;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(#7f5539 0.6px, transparent 0.6px);
+  background-size: 18px 18px;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-mocha via-caramel to-olive bg-clip-text text-transparent;
+}
